@@ -1,4 +1,4 @@
-function ServicesCtrl($scope, $rootScope, $routeParams, ServicesService, $location, ngTableParams, $filter) {
+function ServicesCtrl($scope, $rootScope, $routeParams, ServicesService, $location, ngTableParams, $filter, MockGroupsService) {
 
     $scope.groups = $routeParams.groups;
     $scope.environmentName = $routeParams.environmentName;
@@ -6,6 +6,21 @@ function ServicesCtrl($scope, $rootScope, $routeParams, ServicesService, $locati
     ServicesService.findAll($routeParams.environmentName).
         success(function (data) {
             $scope.services = data.services;
+
+            $scope.services.forEach(function(element) {
+                   console.log(element);
+                  if(element.useMockGroup){
+                    MockGroupsService.get(element.mockGroupId)
+                        .success(function (mockgroupResponse){
+                            console.log(mockgroupResponse);
+                            element.mockName = mockgroupResponse.name;
+                            })
+                        .error(function (error){
+                            console.log("Erreur lors de la récupération du Groupe "+element.mockGroupId+" : "+error);
+                        });
+                  }
+            });
+
 
             $scope.tableParams = new ngTableParams({
                 page: 1,            // show first page

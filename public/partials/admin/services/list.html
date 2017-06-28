@@ -26,6 +26,9 @@
         <td data-title="'Record Data'" sortable="'recordData'">
             {{line.recordData}}
         </td>
+        <td data-title="'MockGroup'" sortable="'mockName'">
+            <a href="#/mocks/list/{{line.mockName}}/all">{{line.mockName}}</a>
+        </td>
         <td data-title="'Edit'"><a href="#/services/edit/{{ environmentName }}/{{ line._id.$oid }}/{{ groups }}"><i class="fa fa-pencil"></i></a></td>
     </tr>
 </table>

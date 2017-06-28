@@ -116,7 +116,8 @@ spApp.factory('MockGroup', function ($resource) {
         {mockgroupId: '@_id.$oid'},
         {
             update: {method: 'PUT'},
-            create: {method: 'POST'}
+            create: {method: 'POST'},
+            get: {method: 'GET'}
         }
     );
 });
