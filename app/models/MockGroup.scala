@@ -45,7 +45,7 @@ object MockGroup {
   }
 
   private val keyCacheAllOptions = "mockGroup-options"
-  private val MOCKGROUP_NAME_PATTERN = "[a-zA-Z0-9]{1,200}"
+  private val MOCKGROUP_NAME_PATTERN = "[a-zA-Z0-9_]{1,200}"
 
 
   /**

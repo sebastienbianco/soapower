@@ -101,7 +101,7 @@ object Environment {
 
   private val keyCacheAllOptions = "environment-options"
   private val keyCacheByName = "environment-name-"
-  private val ENVIRONMENT_NAME_PATTERN = "[a-zA-Z0-9]{1,200}"
+  private val ENVIRONMENT_NAME_PATTERN = "[a-zA-Z0-9_]{1,200}"
 
   /**
     * Identity key for CSV file

@@ -35,3 +35,9 @@ spApp.filter('capitalize', function() {
         return input.substring(0,1).toUpperCase()+input.substring(1);
     }
 });
+
+spApp.filter('arrayToList', function(){
+    return function(arr) {
+        return arr.join(', ');
+    }
+});
