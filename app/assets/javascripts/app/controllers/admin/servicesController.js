@@ -8,11 +8,9 @@ function ServicesCtrl($scope, $rootScope, $routeParams, ServicesService, $locati
             $scope.services = data.services;
 
             $scope.services.forEach(function(element) {
-                   console.log(element);
                   if(element.useMockGroup){
                     MockGroupsService.get(element.mockGroupId)
                         .success(function (mockgroupResponse){
-                            console.log(mockgroupResponse);
                             element.mockName = mockgroupResponse.name;
                             })
                         .error(function (error){
