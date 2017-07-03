@@ -126,6 +126,9 @@ spApp.factory("MockGroupsService", function ($http) {
     return {
         findAll: function (group) {
             return $http.get('/mockgroups/' + group + '/findall');
+        },
+        get: function (mockGroupId) {
+            return $http.get('/mockgroups/'+mockGroupId);
         }
     }
 });

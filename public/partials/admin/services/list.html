@@ -11,6 +11,9 @@
         <td data-title="'Description'" sortable="'description'">
             {{line.description}}
         </td>
+        <td data-title="'Type'" sortable="'typeRequest'">
+            {{line.typeRequest}} {{line.typeRequest=="REST"?line.httpMethod:""}}
+        </td>
         <td data-title="'Local Target'" sortable="'localTarget'">
             {{line.localTarget}}
         </td>
